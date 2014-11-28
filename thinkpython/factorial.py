@@ -9,6 +9,12 @@ def factorial(n):
     :return: The factorial value of n.
     Uses recursion to calculate the factorial
     """
+    if not isinstance(n, int):
+        print("Not supported for non-integers")
+        return
+    if n < 0:
+        print("Not supported for negative integers")
+        return
     if n >= limit:
         print("Cannot calculate recursion for a number greater than " + str(limit))
         return False
@@ -18,5 +24,4 @@ def factorial(n):
     else:
         return n*factorial(n-1)
 
-test = 998
-print(factorial(test))
+factorial(input("Enter the number for calculating it's factorial value : "))
